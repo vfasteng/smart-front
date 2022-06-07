@@ -1,1 +1,1 @@
-I liked the simplicity and look of this site so I cloned it and used it on this project
+Front door to my project. Nice and simple. Deploying to Netlify so using their ID and user authentification.
