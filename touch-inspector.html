@@ -112,80 +112,82 @@
 	</style>
 </head>
   <body>
-    <a-scene debug="true" stats="false" loading-screen={`enabled: false`}>
+	  <a-scene debug="true" stats="false" loading-screen={`enabled: false`}>
 
-	<a-entity id="planeboxx" position="0 0 0">
-		<a-entity id="planebox" position="0 0 0">
-			<a-plane side="double" color="green" position="0 -7.5 0" rotation="-90 0 0" height="15" width="15" material="" static-body></a-plane>
-			<a-plane side="double" color="green" position="0 7.5 0" rotation="-90 0 0" height="15" width="15" material="" static-body></a-plane>
-			<a-plane side="double" color="blue" position="0 0 7.5" rotation="0 0 0" height="15" width="15" material="" static-body></a-plane>
-			<a-plane side="double" color="blue" position="0 0 -7.5" rotation="0 0 0" height="15" width="15" material="" satic-body></a-plane>
-			<a-plane side="double" color="red" position="7.5 0 0" rotation="0 -90 0" height="15" width="15" material="" static-body></a-plane>
-			<a-plane side="double" color="red" position="-7.5 0 0" rotation="0 90 0" height="15" width="15" material="" static-body></a-plane>
-		</a-entity>
-		
-		<a-cylinder position="0 -0.1 0" rotation="" radius="11.25" height="0.2" color="lightblue" opacity=".25" gridhelper="size: 10;divisions:10" static-body></a-cylinder>
-	
-	</a-entity>
+	  	<a-entity id="planeboxx" position="0 0 0">
+	  		<a-entity id="planebox" position="0 0 0">
+	  			<a-plane side="double" color="green" position="0 -7.5 0" rotation="-90 0 0" height="15" width="15" material="" static-body></a-plane>
+	  			<a-plane side="double" color="green" position="0 7.5 0" rotation="-90 0 0" height="15" width="15" material="" static-body></a-plane>
+	  			<a-plane side="double" color="blue" position="0 0 7.5" rotation="0 180 0" height="15" width="15" material="" static-body></a-plane>
+	  			<a-plane side="double" color="blue" position="0 0 -7.5" rotation="-180 0 0" height="15" width="15" material="" satic-body></a-plane>
+	  			<a-plane side="double" color="red" position="7.5 0 0" rotation="0 -90 0" height="15" width="15" material="" static-body></a-plane>
+	  			<a-plane side="double" color="red" position="-7.5 0 0" rotation="0 90 0" height="15" width="15" material="" static-body></a-plane>
+	  		</a-entity>
 
-	<a-camera position="0 1.6 4">
-		<a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-	</a-camera>
-	
-	<a-entity id="anchor"
-			  geometry="primitive: box;"
-			  material="color: yellow; flatShading: true;"
-			  position="0 6 0"
-			  static-body>
-	</a-entity>
-	
-	<a-entity id="target"
-			  geometry="primitive: box; height: 0.5; width: 3; depth: 3;"
-			  material="color: red; flatShading: true;"
-			  position="0 4.0 0"
-			  xxxconstraint="target: #anchor; type: distance; distance: 2.0;"
-			  constraint="type: pointToPoint; target: #anchor; axis: 0 0 0; pivot: 0 3 0; targetPivot: 0 0 0; collideConnected: false;"
-			  dynamic-body
-			  click-impulse>
-	</a-entity>
+	  		<a-cylinder position="0 -0.1 0" rotation="" radius="11.25" height="0.2" color="lightblue" opacity=".25" gridhelper="size: 10;divisions:10" static-body></a-cylinder>
 
-        <a-entity id="brg0"
-			  geometry="primitive: cylinder;"
-			  material="color: yellow; flatShading: true;"
-                          radius="0.25"
-                          height="0.5"
-			  position="0 2.5 -6"
-                          rotation="-90 0 0"
-			  static-body>
-	</a-entity>
-	<a-entity id="brgp1"
-			  geometry="primitive: cylinder;"
-			  material="color: yellow; flatShading: true;"
-                          radius="0.25"
-                          height="0.5"
-			  position="2.5 2.5 -6"
-                          rotation="-90 0 0"
-			  static-body>
-	</a-entity>
-        <a-entity id="brgm1"
-			  geometry="primitive: cylinder;"
-			  material="color: yellow; flatShading: true;"
-                          radius="0.25"
-                          height="0.5"
-			  position="-2.5 2.5 -6"
-                          rotation="-90 0 0"
-			  static-body>
-	</a-entity>
+	  	</a-entity>
 
-      <a-entity id="hsl-green" geometry="primitive: box" material="color:hsl(120, 100%, 75%)" position="-4 1 0" dynamic-body click-impulse></a-entity>
-      <a-entity id="rgb-yellow" geometry="primitive: box" material="color:rgb(255, 255, 0)" position="-2 1 0" dynamic-body click-impulse></a-entity>
-      <a-entity id="hex3-red" geometry="primitive: box" material="color:#f00" position="0 1 0" dynamic-body click-impulse></a-entity>
-      <a-entity id="hex6-red" geometry="primitive: box" material="color:#ff0000" position="2 1 0" dynamic-body click-impulse></a-entity>
-      <a-entity id="string-blue" geometry="primitive: box" material="color:blue" position="4 1 0" dynamic-body click-impulse></a-entity>
-    </a-scene>
+	  	<a-camera position="0 1.6 4">
+	  		<a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+	  	</a-camera>
+
+	  	<a-entity id="anchor"
+				  geometry="primitive: box;"
+				  material="color: yellow; flatShading: true;"
+				  position="0 6 0"
+				  static-body>
+	  	</a-entity>
+
+	  	<a-entity id="target"
+				  geometry="primitive: box; height: 0.5; width: 3; depth: 3;"
+				  material="color: red; flatShading: true;"
+				  position="0 4.0 0"
+				  xxxconstraint="target: #anchor; type: distance; distance: 2.0;"
+				  constraint="type: pointToPoint; target: #anchor; axis: 0 0 0; pivot: 0 3 0; targetPivot: 0 0 0; collideConnected: false;"
+				  dynamic-body
+				  click-impulse>
+	  	</a-entity>
+	  	<a-entity id="z-center-m" geometry="primitive: box" material="color:green" position="0 2.5 -7.0" width="8.0" height="1.0" depth="0.25" static-body click-impulse></a-entity>
+
+	  	<a-entity id="brg0"
+				  geometry="primitive: cylinder;"
+				  material="color: yellow; flatShading: true;"
+				  radius="0.25"
+				  height="0.25"
+				  position="0 2.5 -6"
+				  rotation="-90 0 0"
+				  static-body>
+	  	</a-entity>
+	  	<a-entity id="brgp1"
+				  geometry="primitive: cylinder;"
+				  material="color: yellow; flatShading: true;"
+				  radius="0.25"
+				  height="0.25"
+				  position="2.5 2.5 -6"
+				  rotation="-90 0 0"
+				  static-body>
+	  	</a-entity>
+	  	<a-entity id="brgm1"
+				  geometry="primitive: cylinder;"
+				  material="color: yellow; flatShading: true;"
+				  radius="0.25"
+				  height="0.25"
+				  position="-2.5 2.5 -6"
+				  rotation="-90 0 0"
+				  static-body>
+	  	</a-entity>
+
+
+	  	<a-entity id="hsl-green" geometry="primitive: box" material="color:hsl(120, 100%, 75%)" position="-4 1 0" dynamic-body click-impulse></a-entity>
+	  	<a-entity id="rgb-yellow" geometry="primitive: box" material="color:rgb(255, 255, 0)" position="-2 1 0" dynamic-body click-impulse></a-entity>
+	  	<a-entity id="hex3-red" geometry="primitive: box" material="color:#f00" position="0 1 0" dynamic-body click-impulse></a-entity>
+	  	<a-entity id="hex6-red" geometry="primitive: box" material="color:#ff0000" position="2 1 0" dynamic-body click-impulse></a-entity>
+	  	<a-entity id="string-blue" geometry="primitive: box" material="color:blue" position="4 1 0" dynamic-body click-impulse></a-entity>
+	  </a-scene>
         <script type="text/javascript" src="aframe-physics-system.min.js"></script>
-	<script src="dist/aframe-inspector.min.js"></script>
-	<script src="js/aframe-physics-system.min.js"></script>
+		<script src="dist/aframe-inspector.min.js"></script>
+		<script src="js/aframe-physics-system.min.js"></script>
 
 
 </body>
